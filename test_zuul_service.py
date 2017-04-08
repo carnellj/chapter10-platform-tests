@@ -48,11 +48,8 @@ class TestZuulService(unittest.TestCase):
         self.assertEqual(resp.status, 200)
         self.assertEquals("organizationservice", results["/api/organization/**"])
         self.assertEquals("licensingservice", results[ "/api/licensing/**"])
-        self.assertEquals("organizationservice", results["/api/organizationservice/**"])
-        self.assertEquals("licensingservice", results["/api/licensingservice/**"])
         self.assertEquals("authenticationservice", results["/api/auth/**"])
-        self.assertEquals("authenticationservice", results["/api/authenticationservice/**"])
-        self.assertEquals(6, len(results))
+        self.assertEquals(3, len(results))
 
     def test_org_service(self):
         (resp, content) = self.call_org_service()
